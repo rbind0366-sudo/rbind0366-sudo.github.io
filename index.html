@@ -6,34 +6,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PixelHub - Creative Digital Partner</title>
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
-body{
-background:#0f172a;
-color:#fff;
-}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
-/* NAVBAR */
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#0f172a;color:#fff;overflow-x:hidden;}
+
 nav{
-display:flex;
-justify-content:space-between;
+position:fixed;width:100%;
+display:flex;justify-content:space-between;
 padding:20px 60px;
-background:rgba(0,0,0,0.6);
+background:rgba(0,0,0,0.5);
 backdrop-filter:blur(10px);
-position:fixed;
-width:100%;
 z-index:1000;
 }
 nav h2{color:#38bdf8;}
-nav a{margin-left:20px;color:#fff;}
 
-/* HERO */
 .hero{
 height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-flex-direction:column;
+display:flex;flex-direction:column;
+align-items:center;justify-content:center;
 text-align:center;
 background:linear-gradient(135deg,#1e3a8a,#0f172a);
 }
@@ -43,17 +35,17 @@ background:linear-gradient(90deg,#38bdf8,#9333ea);
 -webkit-background-clip:text;
 color:transparent;
 }
-.hero p{margin:15px 0;font-size:18px;}
+.hero p{margin:20px 0;}
 
 .btn{
-padding:14px 30px;
+padding:15px 30px;
 background:linear-gradient(90deg,#38bdf8,#9333ea);
 border-radius:30px;
-color:#fff;
-font-weight:bold;
+cursor:pointer;
+transition:0.3s;
 }
+.btn:hover{transform:scale(1.1);}
 
-/* SERVICES */
 section{padding:100px 60px;}
 h2{text-align:center;margin-bottom:40px;}
 
@@ -62,45 +54,33 @@ display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 }
-
 .card{
 background:rgba(255,255,255,0.05);
 padding:25px;
 border-radius:20px;
-backdrop-filter:blur(10px);
-transition:0.3s;
+transition:0.4s;
 }
 .card:hover{
 transform:translateY(-10px);
 box-shadow:0 0 20px #38bdf8;
 }
 
-.price{color:#38bdf8;margin-top:10px;}
-
-/* PORTFOLIO */
 .portfolio{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
-.portfolio img{
-width:100%;
-border-radius:15px;
-}
+.portfolio img{width:100%;border-radius:15px;}
 
-/* CONTACT */
-.contact{
-text-align:center;
-}
+.contact{text-align:center;}
 .contact a{
 display:inline-block;
 margin:10px;
 padding:12px 25px;
-border-radius:30px;
 background:#38bdf8;
+border-radius:30px;
 }
 
-/* FLOAT BUTTON */
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -110,11 +90,15 @@ padding:15px;
 border-radius:50%;
 }
 
-/* FOOTER */
-footer{
-text-align:center;
-padding:20px;
-background:#020617;
+/* animation */
+.fade{
+opacity:0;
+transform:translateY(30px);
+transition:1s;
+}
+.fade.show{
+opacity:1;
+transform:translateY(0);
 }
 </style>
 
@@ -124,44 +108,37 @@ background:#020617;
 
 <nav>
 <h2>PixelHub</h2>
-<div>
-<a href="#services">Services</a>
-<a href="#contact">Contact</a>
-</div>
 </nav>
 
 <div class="hero">
 <h1>PixelHub</h1>
 <p>Your Creative Digital Partner</p>
-<a href="https://wa.me/919236223349" target="_blank" class="btn">Order Now</a>
+<a href="https://wa.me/919236223349" class="btn">Order Now</a>
 </div>
 
-<section id="services">
+<section class="fade">
 <h2>Our Services</h2>
 <div class="services">
 
 <div class="card">
 <h3>Video Editing</h3>
-<p>High quality editing</p>
-<div class="price">₹799</div>
+<p>Professional editing</p>
 </div>
 
 <div class="card">
 <h3>Thumbnail Design</h3>
-<p>High CTR thumbnails</p>
-<div class="price">₹149</div>
+<p>High CTR</p>
 </div>
 
 <div class="card">
 <h3>Website Development</h3>
-<p>Modern UI websites</p>
-<div class="price">₹1999+</div>
+<p>Modern UI</p>
 </div>
 
 </div>
 </section>
 
-<section>
+<section class="fade">
 <h2>Our Work</h2>
 <div class="portfolio">
 <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
@@ -170,18 +147,30 @@ background:#020617;
 </div>
 </section>
 
-<section id="contact" class="contact">
-<h2>Contact Us</h2>
-<a href="https://wa.me/919236223349" target="_blank">WhatsApp</a>
+<section class="contact fade">
+<h2>Contact</h2>
+<a href="https://wa.me/919236223349">WhatsApp</a>
 <a href="mailto:vikaskumar21682@gmail.com">Email</a>
 <a href="tel:9236223349">Call</a>
 </section>
 
 <a href="https://wa.me/919236223349" class="whatsapp">💬</a>
 
-<footer>
-<p>© 2026 PixelHub</p>
+<footer style="text-align:center;padding:20px;">
+© 2026 PixelHub
 </footer>
+
+<script>
+const elements=document.querySelectorAll('.fade');
+window.addEventListener('scroll',()=>{
+elements.forEach(el=>{
+const top=el.getBoundingClientRect().top;
+if(top<window.innerHeight-100){
+el.classList.add('show');
+}
+});
+});
+</script>
 
 </body>
 </html>
