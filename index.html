@@ -23,15 +23,17 @@ height:100vh;
 display:flex;flex-direction:column;
 align-items:center;justify-content:center;
 text-align:center;
-background:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c') center/cover;
+background:linear-gradient(135deg,#0f172a,#1e3a8a);
 }
-
-.hero h1{font-size:50px;background:rgba(0,0,0,0.6);padding:10px;}
-.hero p{background:rgba(0,0,0,0.6);padding:5px;}
+.hero h1{font-size:50px;}
+.hero p{margin:10px 0;}
 
 .btn{
-padding:12px 25px;background:#38bdf8;
-border-radius:6px;margin-top:10px;
+padding:12px 25px;
+background:#38bdf8;
+border-radius:6px;
+margin:10px;
+display:inline-block;
 }
 
 section{padding:80px 50px;}
@@ -48,7 +50,7 @@ background:#1e293b;padding:20px;
 border-radius:12px;text-align:center;
 transition:0.3s;
 }
-.card:hover{transform:scale(1.05);}
+.card:hover{transform:translateY(-8px);}
 
 .price{color:#38bdf8;margin-top:10px;}
 
@@ -58,34 +60,63 @@ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
-.portfolio img{
-width:100%;border-radius:10px;
+.portfolio img{width:100%;border-radius:10px;}
+
+.contact{text-align:center;}
+.contact a{
+display:inline-block;
+margin:10px;
+padding:10px 20px;
+background:#38bdf8;
+border-radius:5px;
 }
 
-footer{text-align:center;padding:20px;background:#020617;}
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:15px;
+border-radius:50%;
+font-size:20px;
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:#020617;
+}
 </style>
 
 </head>
 
 <body>
 
+<!-- NAV -->
+
 <nav>
 <h2>PixelHub</h2>
 </nav>
 
+<!-- HERO -->
+
 <div class="hero">
 <h1>PixelHub</h1>
 <p>Your Creative Digital Partner</p>
-<a href="#services" class="btn">Explore</a>
+
+<a href="https://wa.me/919236223349" target="_blank" class="btn">Order Now</a>
+
 </div>
 
-<section id="services">
+<!-- SERVICES -->
+
+<section>
 <h2>Our Services</h2>
 <div class="services">
 
 <div class="card">
 <h3>Video Editing</h3>
-<p>High quality editing</p>
+<p>Professional editing</p>
 <div class="price">₹799</div>
 </div>
 
@@ -97,23 +128,40 @@ footer{text-align:center;padding:20px;background:#020617;}
 
 <div class="card">
 <h3>Website Development</h3>
-<p>Modern websites</p>
+<p>Modern responsive websites</p>
 <div class="price">₹1999+</div>
 </div>
 
 </div>
 </section>
 
-<section>
-<h2>Our Work</h2>
-<div class="portfolio">
+<!-- PORTFOLIO -->
 
+<section>
+<h2>My Work</h2>
+<div class="portfolio">
 <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
 <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
 <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64">
-
 </div>
 </section>
+
+<!-- CONTACT -->
+
+<section class="contact">
+<h2>Contact Me</h2>
+
+<a href="https://wa.me/919236223349" target="_blank">📱 WhatsApp</a>
+
+<a href="mailto:vikaskumar21682@gmail.com">📧 Email</a>
+
+<a href="tel:9236223349">📞 Call Now</a>
+
+</section>
+
+<!-- FLOAT WHATSAPP -->
+
+<a href="https://wa.me/919236223349" target="_blank" class="whatsapp">💬</a>
 
 <footer>
 <p>© 2026 PixelHub</p>
@@ -121,4 +169,3 @@ footer{text-align:center;padding:20px;background:#020617;}
 
 </body>
 </html>
-
